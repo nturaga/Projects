@@ -1,0 +1,751 @@
+#include <assert.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <signal.h>
+
+#include "xalloc.h"
+#include "contracts.h"
+#include "stacks.h"
+
+#include "bare.h"
+#include "c0vm.h"
+#include "c0vm_c0ffi.h"
+#include<stdio.h>
+
+/* call stack frames */
+typedef struct frame * frame;
+struct frame {  
+    c0_value *V; /* local variables */
+    stack S;     /* operand stack */
+    ubyte *P;    /* function body */
+    int pc;      /* return address */
+};
+
+
+/* functions for handling errors */
+void c0_memory_error(char *err) {
+    fprintf(stderr, "Memory error: %s\n", err);
+    raise(SIGUSR1);
+}
+
+void c0_division_error(char *err) {
+    fprintf(stderr, "Division error: %s\n", err);
+    raise(SIGUSR2);
+}
+
+
+/* TODO: implement execute function */
+int execute(struct bc0_file *bc0) {
+    
+  /* Variables used for bytecode interpreter. You will need to initialize
+     these appropriately. */
+  
+  /* Intialize the VARIABLES*/
+  
+  /* callStack to hold frames when functions are called */
+  stack callStack = stack_new();
+  
+  /* initial program is the "main" function, function 0 (which must exist) */
+  struct function_info *main_fn = bc0->function_pool;
+  main_fn->num_args = bc0->function_pool->num_args;
+  main_fn->num_vars = bc0->function_pool->num_vars;
+  main_fn->code_length = bc0->function_pool->code_length;
+  main_fn->code = bc0->function_pool->code;
+  /* array to hold local variables for function */
+  c0_value *V = malloc(sizeof(c0_value)*main_fn->num_vars);
+
+  /* stack for operands for computations */
+  stack S = stack_new();
+
+  /* array of (unsigned) bytes that make up the program */
+  ubyte *P = main_fn->code;
+  /* program counter that holds "address" of next bytecode to interpret from
+     program P */
+  int pc = 0;
+    
+  while (true) {
+    
+#ifdef DEBUG
+    printf("Executing opcode %x  --- Operand stack size: %d\n",
+	   P[pc], stack_size(S));
+#endif
+    
+    switch (P[pc]) {
+      
+      /* GENERAL INSTRUCTIONS: Implement the following cases for each of the
+	 possible bytecodes.  Read the instructions in the assignment to see
+	 how far you should go before you test your code at each stage.  Do
+	 not try to write all of the code below at once!  Remember to update
+	 the program counter (pc) for each case, depending on the number of
+	 bytes needed for each bytecode operation.  See PROG_HINTS.txt for
+	 a few more hints.
+	 
+	 IMPORTANT NOTE: For each case, the case should end with a break
+	 statement to prevent the execution from continuing on into the
+	 next case.  See the POP case for an example.  To introduce new
+	 local variables in a case, use curly braces to create a new block.
+	 See the DUP case for an example.
+         
+	 See C_IDIOMS.txt for further information on idioms you may find
+	 useful.
+      */
+      
+      /* Additional stack operation: */
+    case POP: {
+	  pop(S);
+	  pc++;
+	  break;
+	}
+      /*Function to duplicate values on the operand stack
+       and then push back 2 values on the OPstack V*/
+    case DUP: {
+      c0_value v = pop(S);
+      push(S, VAL(v));
+      push(S, VAL(v));
+      pc++;
+      break;
+    }
+      /*Pop both values from the stack and push them
+	back in reverse order into the stack S, increment the
+	counter*/  
+    case SWAP: {
+      c0_value v1 = pop(S);
+      c0_value v2 = pop(S);
+      push(S,VAL(v1));
+      push(S,VAL(v2));
+      pc++;
+      break;
+    }
+      /* Arithmetic and Logical operations */
+      
+    case IADD: {
+      /*ADD two values on the operand stack,pop the values and then
+       add and push back 1 result on the stack*/
+      int x = INT(pop(S));
+      int y = INT(pop(S));
+      //RESULT
+      int value = x+y;
+      push(S,VAL(value));
+      pc++;
+      break;
+	}
+	  
+    case ISUB:{
+      /*The values on the stack are popped off and we subtract*/
+      int x = INT(pop(S));
+      int y = INT(pop(S));
+      int value = y-x;
+      //Push back the RESULT
+      push(S,VAL(value));
+      pc++;
+      break;
+    }
+	  
+    case IMUL:{
+      /*The values are popped and multiplied*/
+      int x = INT(pop(S));
+      int y = INT(pop(S));
+      int value = x*y;
+      //push back the result of the multiplication
+      push(S,VAL(value));
+      pc++;
+      break;
+    }
+	  
+    case IDIV:{
+      /* Divide the two popped off values from the stack*/
+      int y = INT(pop(S));
+      int x = INT(pop(S));
+      /*Non-intuitive case where the values popped off the stack
+       are INT_MIN and -1, this would cause a division error*/
+      if ((x == INT_MIN) && (y == -1))
+	{
+	  c0_division_error("Division Error");
+	}
+      /*WE just cannot divide by 0*/
+      if (y ==0){
+	c0_division_error("Zero Division Error");
+	abort();
+      }
+      int value = x/y;
+      //Push the result back on the op stack
+      push(S,VAL(value));
+      pc++;
+      break;
+    }
+	  
+      /*Edge case to be handled is INT_MIN % -1*/   
+    case IREM:{
+      int y = INT(pop(S));
+      int x = INT(pop(S));
+      /*The value INT_MIN and -1 cause errors for getting the MOD*/
+      if ((x == INT_MIN) && (y == -1))
+	{
+	  c0_division_error("Division Error");
+	}
+      //Again, we cannot divide by 0
+      if (y ==0){
+	c0_division_error("Zero Division Error");
+	abort();
+      }
+      int value = x%y;
+      // IN all the programs we have to increment the program counter
+      // so that we can move through the byte code.
+      push(S,VAL(value));
+      pc++;
+      break;
+    }
+                
+    case IAND:{
+      /* The logic operator allows us to use the AND on two values*/
+      int x = INT(pop(S));
+      int y = INT(pop(S));
+      int value = x&y;
+      //Push result on opstack and increment the PC
+      push(S,VAL(value));
+      pc++;
+      break;
+    }	
+	  
+    case IOR:{
+      /* The logic operator allows us to use the AND on two values*/
+      int x = INT(pop(S));
+      int y = INT(pop(S));
+	  int value = x|y;
+	  //printf("%d\n",value);
+	  push(S,VAL(value));
+	  pc++;
+	  break;
+	}
+	  
+	case IXOR:{
+	  //printf("In IXOR\n");
+	  int x = INT(pop(S));
+	  int y = INT(pop(S));
+	  int value = x^y;
+	  //printf("%d\n",value);
+	  push(S,VAL(value));
+	  pc++;
+	  break;
+	}
+	  
+	case ISHL:{
+	  //printf("In ISHL\n");
+	  //Mask "y" by 5 bits, the first value popped off the stack
+	  int y = INT(pop(S)) & 0x1F;
+	  //The second value popped of the stack
+	  int x = INT(pop(S));
+	  
+	  int value = x<<y;
+	  //printf("%d\n",value);
+	  push(S,VAL(value));
+	  pc++;
+	  break;
+	}
+	  
+	case ISHR:{
+	  //printf("In ISHR\n");
+	  //Mask "y" by 5 bits, the first value popped off the stack
+	  int y = INT(pop(S)) & 0x1F;
+	  //The second value popped of the stack
+	  int x = INT(pop(S));
+	  int value = x>>y;
+	  //printf("%d\n",value);
+	  push(S,VAL(value));
+	  pc++;
+	  //  printf("pc:%d\n",pc);
+	  break;
+	}
+	  
+                
+	  /* Pushing small constants */
+          
+	case BIPUSH:{
+	  //NEED TO MAKE SURE THE VALUE OF X IS SIGN extended
+          
+	  /*Initialize a temp var to store the value from the
+	    bytecode in the stack.*/
+	  //printf("In Bipush\n");
+	  int x = (int)((char)P[pc+1]);
+	  //printf("%d\n",x);
+	  push(S,VAL(x));
+	  //printf("pc:%d\n",pc);
+	  pc = pc + 2;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+	  
+                
+                
+	  /* Returning from a function */
+          
+	case RETURN:{
+	  //printf("In RETURN\n");
+	  //  if (!stack_empty(S) && stack_size(S) ==1)
+	  // {
+	  int return_value = INT(pop(S));
+	  free(V);
+	  free(S);
+	  // }
+	  if (stack_empty(callStack))
+	    {
+	      return return_value;
+	    }
+	  
+	  frame popped_frame = pop(callStack);
+	  /*pf is for popped frame*/
+	  V = popped_frame->V;
+	  S = popped_frame->S;
+	  P = popped_frame->P;
+	  pc = popped_frame->pc;
+	  free(popped_frame);
+	  push(S,VAL(return_value));
+	  break;
+	}
+	  
+                
+	  /* Operations on local variables */
+	  
+	  /*Push the value of a local variable onto the operand
+	    stack*/
+	case VLOAD:{
+	  //	  printf("VLOAD\n");
+	  //c0_value loc_var = V[P[pc+1]];
+	  //printf("%d\n", INT(V[P[pc+1]])); 
+	  
+	  push(S,V[P[pc+1]]);
+	  // printf("pc:%d\n",pc); 
+	  pc = pc+2;
+	  // printf("pc:%d\n",pc);
+	  break;
+	}
+	  
+	  /*pop the value from the top of the stack and store it in a
+	    local variable with the vtore instruction*/
+	case VSTORE:{
+	  //printf("VSTORE\n");
+	  c0_value x = pop(S);
+	  //printf("%d\n",INT(x));
+	  V[P[pc+1]] = x;
+	  pc = pc+2;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+                /*Push a NULL char*/    
+	case ACONST_NULL:{
+	  //printf("ACONST_NULL\n");
+	  push(S,VAL(NULL));
+	  //printf("pc:%d\n",pc);
+	  pc++;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+	  
+                /* ILDC and ALDC take 2 unsigned bytes as operands.
+		   The integer pool(int_pool) stores the constants*/    
+	case ILDC:{
+	  //printf("ILDC\n");
+	  ubyte val1 = P[pc+1];
+	  ubyte val2 = P[pc+2];
+	  //	printf("%d\n",shift_value);
+	  push(S,VAL(bc0->int_pool[val1<<8|val2]));
+	  //printf("%d\n",INT(bc0->int_pool[val1<<8|val2]));
+	  //printf("pc:%d\n",pc);
+	  pc = pc+3;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+	  
+          
+	  /* For strings, the address of the values are put on
+                 the operatond stack,S*/    
+	case ALDC:{
+	  //  printf("ALDC\n");
+	  ubyte val1 = P[pc+1];
+	  ubyte val2 = P[pc+2];
+	  int shift_value = (int)(val1<<8|val2);
+	  push(S,VAL(&bc0->string_pool[shift_value]));
+	  //printf("pc:%d\n",pc);
+	  pc = pc+3;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+              
+              
+	      /* Control flow operations */
+                /*There is no operation performed on the S*/    
+	case NOP:{
+	  //printf("NOP\n");
+	  //printf("%d\n",pc);
+	  pc++;
+	  //printf("pc:%d\n",pc);
+	  break;
+	}
+                
+	case IF_CMPEQ:{
+	  // printf("IF_CMPEQ\n");
+	  ubyte val1 =  P[pc+1];
+	  ubyte val2 =  P[pc+2];
+	  c0_value y = (pop(S));
+	  c0_value x = (pop(S));
+	  if (x == y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      pc = (pc + (val1|val2));
+	      //  printf("pc:%d\n",pc); 
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+	      
+	case IF_CMPNE:{
+          
+	  // printf("IF_CMPNE\n");
+	  ubyte val1 = P[pc+1];
+	  ubyte val2 = P[pc+2];
+	  c0_value y = (pop(S));
+	  //printf("%d\n",INT(y));
+	  c0_value x = (pop(S));
+	  // printf("%d\n",INT(x));
+	  if (x != y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      pc = (pc + (val1|val2));
+	      // printf("pc:%d\n",pc);
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+	  
+                
+	case IF_ICMPLT:{
+	  
+	  // printf("IF_CMPLT\n");
+	  ubyte val1 = P[pc+1];
+	  ubyte val2 = P[pc+2];
+	  int y = INT(pop(S));
+	  int x = INT(pop(S));
+	  if (x < y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      pc = (pc + (val1|val2));
+	      //  printf("pc:%d\n",pc);
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+                
+                
+	case IF_ICMPGE:{
+	  
+	  //	  printf("IF_CMPGE\n");
+	  ubyte val1 =  P[pc+1];
+	  ubyte val2 =  P[pc+2];
+	  int y = INT(pop(S));
+	  int x = INT(pop(S));
+	  if (x >= y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      pc = (pc + (val1|val2));
+	      //  printf("pc:%d\n",pc);
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+                
+	case IF_ICMPGT:{
+                
+	  //  printf("IF_CMPGT\n");
+	  ubyte val1 =  P[pc+1];
+	  ubyte val2 =  P[pc+2];
+	  int y = INT(pop(S));
+	  int x = INT(pop(S));
+	  if (x > y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      pc = (pc + (val1|val2));
+	      // printf("%d\n",pc);
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+                
+                
+	case IF_ICMPLE:{
+                
+	  //printf("IF_CMPLE\n");
+	  ubyte val1 =  P[pc+1];
+	  ubyte val2 = P[pc+2];
+	  int y = INT(pop(S));
+	  //printf("%d\n",INT(y));
+	  int x = INT(pop(S));
+	  //printf("%d\n",INT(x));
+	  if (x <= y)
+	    {
+	      val1 = (val1<<8);
+	      val2 = (val2);
+	      //printf("pc%d\n",pc);
+	      //  printf("val1|val2%d\n",(val1|val2));
+	      pc = (pc + (val1|val2));
+	      //printf("%d\n",pc);
+	    }
+	  else{
+	    pc= pc+3;
+	  }
+	  break;
+	}
+	  
+	case GOTO:{
+	  
+	  //printf("GOTO\n");
+	  byte val1 = P[pc+1];
+	  byte val2 = P[pc+2];
+	  pc = (pc+(val1<<8|val2));
+	  break;
+	}
+	  
+                
+	  /* Function call operations: */
+          
+	case INVOKESTATIC:{
+	  
+	  //printf("INVOKE STATIC\n");
+	  int val1 =  INT(P[pc+1]);
+	  int val2 =  INT(P[pc+2]);
+	  //printf("val1:%d\n",val1); 
+	  //printf("val2:%d\n",val2); 
+
+	  //                pc=pc+3;
+	  int function_index = (val1<<8|val2);
+          //printf("function index: %d\n",function_index);
+	  //New frame with current code pointer,pc,S,V
+	  frame new_frame = malloc(sizeof(struct frame));
+	  new_frame->P = P;
+	  new_frame->pc = pc+3;
+	  new_frame->S = S;
+	  new_frame->V = V;
+	  //Push new_frame onto the call stack
+	  push(callStack,new_frame);
+	  //allocate new local variable array
+	  
+	  struct function_info f = bc0->function_pool[function_index];
+	  c0_value* new_LVA = malloc(sizeof(c0_value)*f.num_vars);
+	  for (int counter = f.num_args -1;counter>=0;counter--)
+	    {
+	      
+	      new_LVA[counter]=pop(S);
+	    }
+	  //Create a new operand stack
+	  stack new_opStack = stack_new();
+                //load new code into the program array
+	  
+	  P = f.code;
+	  //set program counter to 0
+	  pc = 0;
+	  S = new_opStack;
+	  V = new_LVA;
+	  break;
+	}
+          
+	case INVOKENATIVE:{
+                
+	  //printf("INVOKENATIVE\n");
+	  int val1 =  INT(P[pc+1]);
+	  int val2 =  INT(P[pc+2]);
+	  //                pc=pc+3;
+	  int function_index = (val1<<8|val2);
+	  //load new code into the program array
+	  struct native_info g = (bc0->native_pool[function_index]);
+	  int g_args = g.num_args;
+	  c0_value* new_LVA = malloc(sizeof(c0_value)*g_args);
+          
+	  for (int counter =g_args-1;counter>=0;counter--)
+	    {
+	      new_LVA[counter] = pop(S);
+	    }
+	  push(S,
+	       native_function_table[g.function_table_index](new_LVA));
+	  //free(new_LVA);
+	  pc = pc+3;
+	  break;
+	}                
+	  /* Memory allocation operations: */
+          
+	case NEW:{
+	  // printf("NEW\n");
+	  int size = P[pc+1];
+	  c0_value* new_array =(c0_value*) malloc(size);
+	  /*Since "new_array" is an address to the first value on
+	    the array*/
+	  push(S,new_array);
+	  //CHECK              //Not sure if i have to do pc+2;
+	  pc+=2;
+	  break;
+	}
+	  
+	case NEWARRAY:{
+	  //printf("NEWARRAY\n");
+	  int size = P[pc+1];
+	  /*Each element in the array has size "size" ;)*/
+	  int n =INT (pop(S));
+	  //printf("n:%d\n",n);
+	  c0_array* new_array = malloc(sizeof(struct c0_array) + size*n);
+	  new_array->elt_size = size;
+	  new_array->count = n;
+	  push(S,new_array);
+	  pc+=2;
+	  break;
+	}
+	  
+	case ARRAYLENGTH:{
+	  //printf("ARRAYLENGTH\n");
+	  c0_array* address = (c0_array*)pop(S);
+	  int array_length = address -> count;
+	  push(S,VAL(array_length));
+	  pc++;
+	  break;
+	}
+                
+	  /* Memory access operations: */
+          
+	case AADDF:{
+	  // printf("AADDF\n");
+	  ubyte offset = P[pc+1];
+	  char* stack_address = (char*)(pop(S));
+	  //Stack address "a" cannot be NULL
+	  //ASSERT(stack_address!=NULL);
+	  push(S,VAL(stack_address+offset));
+	  pc+=2;
+	  break;
+	}
+	  
+	case AADDS:{
+	  //printf("AADDS\n");
+	  int array_index = INT(pop(S));
+	  struct c0_array* address =  pop(S) ;
+	  if (!(array_index>=0 && array_index < address->count))
+	    {
+	      c0_memory_error("Array index not in bounds");
+	      abort();
+	    }
+	  push(S,(char*)(address)+
+	       ((address->elt_size)*array_index)+sizeof(struct c0_array));
+	  pc++;
+	  break;
+	}
+	  
+	case IMLOAD:{
+	  //printf("IMLOAD\n");
+	  int* address =(int*) pop(S);
+	  if (address == NULL){
+	    c0_memory_error("Dereferencing NULL pointer");
+	    abort();
+	  }
+	  push(S,VAL(*address));
+	  pc++;
+	  break;
+	}
+	  
+	case IMSTORE:{
+	  // printf("IMSTORE\n");
+	  int x = INT(pop(S));
+	  int* a = (int*)(pop(S));
+	  if (a==NULL){
+	    c0_memory_error("Dereferencing NULL pointer");
+	  }
+	  ASSERT(a!=NULL);
+	  *a = x;
+	  pc++;
+	  break;
+	}
+                
+	case AMLOAD:{
+	  //printf("AMLOAD\n");
+	  c0_value* a = (c0_value*)pop(S);
+	  if (a==NULL){
+            c0_memory_error("Dereferencing NULL pointer");
+	    abort();
+	  }
+	  ASSERT(a!=NULL);
+	  // b is pointing to a
+	  c0_value b = *a;
+	  
+	  push(S,b);
+	  pc++;
+	  break;
+	}
+	  
+          
+	case AMSTORE:{
+	  //printf("AMSTORE\n");
+	  c0_value* b = (c0_value*)pop(S);
+	  c0_value* a =(c0_value*) pop(S);
+	  if (a==NULL){
+            c0_memory_error("Dereferencing NULL pointer");
+	    abort();
+	  }
+	  ASSERT(a!=NULL);
+	  *a = b;
+	  //	  ASSERT(a!=NULL);
+	  pc++;
+	  break;
+	}
+	  
+	case CMLOAD:{
+	  //printf("CMLOAD\n");
+	  char* a = (char*)(pop(S));
+	  if (a==NULL){
+            c0_memory_error("Dereferencing NULL pointer");
+	    abort();
+	  }
+	  //ASSERT(a!=NULL);
+	  int x = (int)(*a);
+	  push(S,VAL(x));
+	  pc++;
+	  break;
+	}
+	  
+	case CMSTORE:{
+	  //	  printf("CMSTORE\n");
+	  int x = INT(pop(S));
+	  char* a = (char*)pop(S);
+	  if (a==NULL){
+            c0_memory_error("Dereferencing NULL pointer");
+	    abort();
+	  }
+	  ASSERT(a!=NULL);
+	  *a = x & 0x7f;
+	  pc++;
+	  break;
+	}
+	  
+                
+	  fprintf(stderr, "opcode not implemented: 0x%02x\n", P[pc]);
+	  abort();
+                
+	default:
+	  fprintf(stderr, "invalid opcode: 0x%02x\n", P[pc]);
+	  abort();
+        }
+        
+    }
+    
+    /* cannot get here from infinite loop */
+    assert(false);
+}
+

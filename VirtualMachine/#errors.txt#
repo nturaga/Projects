@@ -1,0 +1,1848 @@
+Nitesh Turaga Your courses
+15-122: Principles of Imperative Computation (s12)
+
+Home | Gradebook | Account | Meetings | Jobs
+
+
+Feedback for Homework 8 - Task 2 (nturaga)
+
+Autograder [Sat May  5 11:56:58 2012]: Received job homework8_nturaga_3:309
+Autograder [Sat May  5 11:57:08 2012]: Success: Your code finished with no errors
+Autograder [Sat May  5 11:57:08 2012]: Output from driver:
+make extract -is
+Time To Inspect...
+Makefile
+grader.py
+grading_engine.py
+handin.tar
+output
+starter.zip
+tests.tar
+time.out
+c0vm.c
+tests/task2/
+tests/task2/old_bc0/
+tests/task2/old_bc0/add4.bc0
+tests/task2/old_bc0/and1.bc0
+tests/task2/old_bc0/and2.bc0
+tests/task2/old_bc0/and3.bc0
+tests/task2/old_bc0/and4.bc0
+tests/task2/old_bc0/and5.bc0
+tests/task2/old_bc0/shl10.bc0
+tests/task2/old_bc0/shl11.bc0
+tests/task2/old_bc0/shl12.bc0
+tests/task2/old_bc0/shl13.bc0
+tests/task2/old_bc0/shl14.bc0
+tests/task2/old_bc0/shr10.bc0
+tests/task2/old_bc0/shr11.bc0
+tests/task2/old_bc0/shr12.bc0
+tests/task2/old_bc0/shr13.bc0
+tests/task2/old_bc0/shr14.bc0
+tests/task2/old_bc0/shr1.bc0
+tests/task2/old_bc0/shr2.bc0
+tests/task2/old_bc0/shr3.bc0
+tests/task2/old_bc0/combo1.bc0
+tests/task2/old_bc0/mod10.bc0
+tests/task2/old_bc0/shr4.bc0
+tests/task2/old_bc0/combo2.bc0
+tests/task2/old_bc0/mod11.bc0
+tests/task2/old_bc0/shr5.bc0
+tests/task2/old_bc0/mod12.bc0
+tests/task2/old_bc0/shr6.bc0
+tests/task2/old_bc0/shr7.bc0
+tests/task2/old_bc0/shr8.bc0
+tests/task2/old_bc0/shr9.bc0
+tests/task2/old_bc0/dup.bc0
+tests/task2/old_bc0/popswap.bc0
+tests/task2/old_bc0/div1.bc0
+tests/task2/old_bc0/div2.bc0
+tests/task2/old_bc0/div3.bc0
+tests/task2/old_bc0/div4.bc0
+tests/task2/old_bc0/div5.bc0
+tests/task2/old_bc0/div6.bc0
+tests/task2/old_bc0/div7.bc0
+tests/task2/old_bc0/div8.bc0
+tests/task2/old_bc0/div9.bc0
+tests/task2/old_bc0/xor1.bc0
+tests/task2/old_bc0/xor2.bc0
+tests/task2/old_bc0/xor3.bc0
+tests/task2/old_bc0/xor4.bc0
+tests/task2/old_bc0/xor5.bc0
+tests/task2/old_bc0/mod1.bc0
+tests/task2/old_bc0/return1.bc0
+tests/task2/old_bc0/mod2.bc0
+tests/task2/old_bc0/or1.bc0
+tests/task2/old_bc0/return2.bc0
+tests/task2/old_bc0/mod3.bc0
+tests/task2/old_bc0/or2.bc0
+tests/task2/old_bc0/return3.bc0
+tests/task2/old_bc0/mod4.bc0
+tests/task2/old_bc0/or3.bc0
+tests/task2/old_bc0/mod5.bc0
+tests/task2/old_bc0/or4.bc0
+tests/task2/old_bc0/mod6.bc0
+tests/task2/old_bc0/or5.bc0
+tests/task2/old_bc0/mod7.bc0
+tests/task2/old_bc0/mod8.bc0
+tests/task2/old_bc0/shl1.bc0
+tests/task2/old_bc0/shl2.bc0
+tests/task2/old_bc0/mod9.bc0
+tests/task2/old_bc0/shl3.bc0
+tests/task2/old_bc0/shl4.bc0
+tests/task2/old_bc0/sub1.bc0
+tests/task2/old_bc0/shl5.bc0
+tests/task2/old_bc0/sub2.bc0
+tests/task2/old_bc0/shl6.bc0
+tests/task2/old_bc0/sub3.bc0
+tests/task2/old_bc0/shl7.bc0
+tests/task2/old_bc0/sub4.bc0
+tests/task2/old_bc0/mul1.bc0
+tests/task2/old_bc0/shl8.bc0
+tests/task2/old_bc0/mul2.bc0
+tests/task2/old_bc0/shl9.bc0
+tests/task2/old_bc0/mul3.bc0
+tests/task2/old_bc0/mul4.bc0
+tests/task2/old_bc0/mul5.bc0
+tests/task2/old_bc0/mul6.bc0
+tests/task2/old_bc0/div10.bc0
+tests/task2/old_bc0/mul7.bc0
+tests/task2/old_bc0/div11.bc0
+tests/task2/old_bc0/div12.bc0
+tests/task2/old_bc0/add1.bc0
+tests/task2/old_bc0/add2.bc0
+tests/task2/old_bc0/add3.bc0
+tests/task2/c0/
+tests/task2/c0/shr3.c0
+tests/task2/c0/mul4.c0
+tests/task2/c0/shr7.c0
+tests/task2/c0/div12.c0
+tests/task2/c0/and4.c0
+tests/task2/c0/shl13.c0
+tests/task2/c0/xor4.c0
+tests/task2/c0/shr11.c0
+tests/task2/c0/mod1.c0
+tests/task2/c0/return1.c0
+tests/task2/c0/div1.c0
+tests/task2/c0/mod5.c0
+tests/task2/c0/or4.c0
+tests/task2/c0/div5.c0
+tests/task2/c0/mod9.c0
+tests/task2/c0/shl2.c0
+tests/task2/c0/add1.c0
+tests/task2/c0/div9.c0
+tests/task2/c0/shl6.c0
+tests/task2/c0/sub3.c0
+tests/task2/c0/shr2.c0
+tests/task2/c0/mul3.c0
+tests/task2/c0/mod12.c0
+tests/task2/c0/shr6.c0
+tests/task2/c0/mul7.c0
+tests/task2/c0/div11.c0
+tests/task2/c0/and3.c0
+tests/task2/c0/shl12.c0
+tests/task2/c0/xor3.c0
+tests/task2/c0/shr10.c0
+tests/task2/c0/shr14.c0
+tests/task2/c0/mod4.c0
+tests/task2/c0/or3.c0
+tests/task2/c0/div4.c0
+tests/task2/c0/mod8.c0
+tests/task2/c0/shl1.c0
+tests/task2/c0/div8.c0
+tests/task2/c0/sub2.c0
+tests/task2/c0/shl5.c0
+tests/task2/c0/add4.c0
+tests/task2/c0/shr1.c0
+tests/task2/c0/mul2.c0
+tests/task2/c0/shl9.c0
+tests/task2/c0/shr5.c0
+tests/task2/c0/mod11.c0
+tests/task2/c0/combo2.c0
+tests/task2/c0/div10.c0
+tests/task2/c0/mul6.c0
+tests/task2/c0/and2.c0
+tests/task2/c0/shr9.c0
+tests/task2/c0/shl11.c0
+tests/task2/c0/xor2.c0
+tests/task2/c0/shr13.c0
+tests/task2/c0/mod3.c0
+tests/task2/c0/or2.c0
+tests/task2/c0/return3.c0
+tests/task2/c0/div3.c0
+tests/task2/c0/mod7.c0
+tests/task2/c0/div7.c0
+tests/task2/c0/sub1.c0
+tests/task2/c0/shl4.c0
+tests/task2/c0/add3.c0
+tests/task2/c0/mul1.c0
+tests/task2/c0/shl8.c0
+tests/task2/c0/combo1.c0
+tests/task2/c0/mod10.c0
+tests/task2/c0/shr4.c0
+tests/task2/c0/mul5.c0
+tests/task2/c0/and1.c0
+tests/task2/c0/shr8.c0
+tests/task2/c0/shl10.c0
+tests/task2/c0/and5.c0
+tests/task2/c0/xor1.c0
+tests/task2/c0/shl14.c0
+tests/task2/c0/xor5.c0
+tests/task2/c0/shr12.c0
+tests/task2/c0/return2.c0
+tests/task2/c0/or1.c0
+tests/task2/c0/mod2.c0
+tests/task2/c0/div2.c0
+tests/task2/c0/or5.c0
+tests/task2/c0/mod6.c0
+tests/task2/c0/div6.c0
+tests/task2/c0/shl3.c0
+tests/task2/c0/add2.c0
+tests/task2/c0/shl7.c0
+tests/task2/c0/sub4.c0
+tests/task2/add4.bc0
+tests/task2/and1.bc0
+tests/task2/and2.bc0
+tests/task2/and3.bc0
+tests/task2/and4.bc0
+tests/task2/and5.bc0
+tests/task2/shl10.bc0
+tests/task2/shl11.bc0
+tests/task2/shl12.bc0
+tests/task2/shl13.bc0
+tests/task2/shl14.bc0
+tests/task2/shr10.bc0
+tests/task2/shr11.bc0
+tests/task2/shr12.bc0
+tests/task2/shr13.bc0
+tests/task2/shr14.bc0
+tests/task2/shr1.bc0
+tests/task2/shr2.bc0
+tests/task2/shr3.bc0
+tests/task2/combo1.bc0
+tests/task2/mod10.bc0
+tests/task2/shr4.bc0
+tests/task2/combo2.bc0
+tests/task2/mod11.bc0
+tests/task2/shr5.bc0
+tests/task2/mod12.bc0
+tests/task2/shr6.bc0
+tests/task2/shr7.bc0
+tests/task2/shr8.bc0
+tests/task2/shr9.bc0
+tests/task2/dup.bc0
+tests/task2/popswap.bc0
+tests/task2/div1.bc0
+tests/task2/div2.bc0
+tests/task2/div3.bc0
+tests/task2/div4.bc0
+tests/task2/div5.bc0
+tests/task2/div6.bc0
+tests/task2/div7.bc0
+tests/task2/div8.bc0
+tests/task2/div9.bc0
+tests/task2/xor1.bc0
+tests/task2/xor2.bc0
+tests/task2/xor3.bc0
+tests/task2/xor4.bc0
+tests/task2/xor5.bc0
+tests/task2/sources.test
+tests/task2/mod1.bc0
+tests/task2/return1.bc0
+tests/task2/mod2.bc0
+tests/task2/or1.bc0
+tests/task2/return2.bc0
+tests/task2/mod3.bc0
+tests/task2/or2.bc0
+tests/task2/return3.bc0
+tests/task2/mod4.bc0
+tests/task2/or3.bc0
+tests/task2/mod5.bc0
+tests/task2/or4.bc0
+tests/task2/mod6.bc0
+tests/task2/or5.bc0
+tests/task2/mod7.bc0
+tests/task2/shl1.bc0
+tests/task2/mod8.bc0
+tests/task2/shl2.bc0
+tests/task2/mod9.bc0
+tests/task2/shl3.bc0
+tests/task2/shl4.bc0
+tests/task2/sub1.bc0
+tests/task2/shl5.bc0
+tests/task2/sub2.bc0
+tests/task2/shl6.bc0
+tests/task2/sub3.bc0
+tests/task2/shl7.bc0
+tests/task2/sub4.bc0
+tests/task2/mul1.bc0
+tests/task2/shl8.bc0
+tests/task2/mul2.bc0
+tests/task2/shl9.bc0
+tests/task2/mul3.bc0
+tests/task2/mul4.bc0
+tests/task2/mul5.bc0
+tests/task2/mul6.bc0
+tests/task2/div10.bc0
+tests/task2/mul7.bc0
+tests/task2/div11.bc0
+tests/task2/div12.bc0
+tests/task2/add1.bc0
+tests/task2/add2.bc0
+tests/task2/add3.bc0
+tests/task3/
+tests/task3/old_bc0/
+tests/task3/old_bc0/largeor1.bc0
+tests/task3/old_bc0/const6.bc0
+tests/task3/old_bc0/largeor2.bc0
+tests/task3/old_bc0/const7.bc0
+tests/task3/old_bc0/largediv1.bc0
+tests/task3/old_bc0/largediv2.bc0
+tests/task3/old_bc0/largediv3.bc0
+tests/task3/old_bc0/largediv4.bc0
+tests/task3/old_bc0/largeadd1.bc0
+tests/task3/old_bc0/largeadd2.bc0
+tests/task3/old_bc0/largeadd3.bc0
+tests/task3/old_bc0/largeadd4.bc0
+tests/task3/old_bc0/largeand1.bc0
+tests/task3/old_bc0/largeand2.bc0
+tests/task3/old_bc0/largexor1.bc0
+tests/task3/old_bc0/largexor2.bc0
+tests/task3/old_bc0/largemod1.bc0
+tests/task3/old_bc0/largemod2.bc0
+tests/task3/old_bc0/largemod3.bc0
+tests/task3/old_bc0/largemod4.bc0
+tests/task3/old_bc0/largeshl1.bc0
+tests/task3/old_bc0/largeshl2.bc0
+tests/task3/old_bc0/largeshl3.bc0
+tests/task3/old_bc0/largesub1.bc0
+tests/task3/old_bc0/largesub2.bc0
+tests/task3/old_bc0/largesub3.bc0
+tests/task3/old_bc0/largesub4.bc0
+tests/task3/old_bc0/largeshr1.bc0
+tests/task3/old_bc0/largemul1.bc0
+tests/task3/old_bc0/largeshr2.bc0
+tests/task3/old_bc0/largemul2.bc0
+tests/task3/old_bc0/largeshr3.bc0
+tests/task3/old_bc0/const1.bc0
+tests/task3/old_bc0/const2.bc0
+tests/task3/old_bc0/const3.bc0
+tests/task3/old_bc0/const4.bc0
+tests/task3/old_bc0/const5.bc0
+tests/task3/c0/
+tests/task3/c0/largediv1.c0
+tests/task3/c0/largediv3.c0
+tests/task3/c0/largeshl2.c0
+tests/task3/c0/largeadd1.c0
+tests/task3/c0/largesub1.c0
+tests/task3/c0/largeadd3.c0
+tests/task3/c0/largesub3.c0
+tests/task3/c0/largeshr2.c0
+tests/task3/c0/largemul1.c0
+tests/task3/c0/largeand1.c0
+tests/task3/c0/largexor1.c0
+tests/task3/c0/const1.c0
+tests/task3/c0/const3.c0
+tests/task3/c0/const5.c0
+tests/task3/c0/largemod2.c0
+tests/task3/c0/const7.c0
+tests/task3/c0/largeor2.c0
+tests/task3/c0/largemod4.c0
+tests/task3/c0/largediv2.c0
+tests/task3/c0/largediv4.c0
+tests/task3/c0/largeshl1.c0
+tests/task3/c0/largeshl3.c0
+tests/task3/c0/largeadd2.c0
+tests/task3/c0/largesub2.c0
+tests/task3/c0/largeadd4.c0
+tests/task3/c0/largesub4.c0
+tests/task3/c0/largeshr1.c0
+tests/task3/c0/largemul2.c0
+tests/task3/c0/largeshr3.c0
+tests/task3/c0/largeand2.c0
+tests/task3/c0/largexor2.c0
+tests/task3/c0/const2.c0
+tests/task3/c0/const4.c0
+tests/task3/c0/largemod1.c0
+tests/task3/c0/largeor1.c0
+tests/task3/c0/const6.c0
+tests/task3/c0/largemod3.c0
+tests/task3/largeor1.bc0
+tests/task3/const6.bc0
+tests/task3/largeor2.bc0
+tests/task3/const7.bc0
+tests/task3/largediv1.bc0
+tests/task3/largediv2.bc0
+tests/task3/largediv3.bc0
+tests/task3/largediv4.bc0
+tests/task3/largeadd1.bc0
+tests/task3/largeadd2.bc0
+tests/task3/largeadd3.bc0
+tests/task3/largeadd4.bc0
+tests/task3/largeand1.bc0
+tests/task3/sources.test
+tests/task3/largeand2.bc0
+tests/task3/largexor1.bc0
+tests/task3/largexor2.bc0
+tests/task3/largemod1.bc0
+tests/task3/largemod2.bc0
+tests/task3/largemod3.bc0
+tests/task3/largemod4.bc0
+tests/task3/largeshl1.bc0
+tests/task3/largeshl2.bc0
+tests/task3/largeshl3.bc0
+tests/task3/largesub1.bc0
+tests/task3/largesub2.bc0
+tests/task3/largesub3.bc0
+tests/task3/largesub4.bc0
+tests/task3/largeshr1.bc0
+tests/task3/largemul1.bc0
+tests/task3/largeshr2.bc0
+tests/task3/largeshr3.bc0
+tests/task3/largemul2.bc0
+tests/task3/const1.bc0
+tests/task3/const2.bc0
+tests/task3/const3.bc0
+tests/task3/const4.bc0
+tests/task3/const5.bc0
+tests/task4/
+tests/task4/old_bc0/
+tests/task4/old_bc0/nested1.bc0
+tests/task4/old_bc0/nested2.bc0
+tests/task4/old_bc0/nested3.bc0
+tests/task4/old_bc0/ifgt1.bc0
+tests/task4/old_bc0/ifgt2.bc0
+tests/task4/old_bc0/ifgt3.bc0
+tests/task4/old_bc0/ifgt4.bc0
+tests/task4/old_bc0/ifgt5.bc0
+tests/task4/old_bc0/iflt1.bc0
+tests/task4/old_bc0/ifgt6.bc0
+tests/task4/old_bc0/iflt2.bc0
+tests/task4/old_bc0/iflt3.bc0
+tests/task4/old_bc0/iflt4.bc0
+tests/task4/old_bc0/iflt5.bc0
+tests/task4/old_bc0/iflt6.bc0
+tests/task4/old_bc0/while1.bc0
+tests/task4/old_bc0/while2.bc0
+tests/task4/old_bc0/while3.bc0
+tests/task4/old_bc0/ifge1.bc0
+tests/task4/old_bc0/while4.bc0
+tests/task4/old_bc0/ifge2.bc0
+tests/task4/old_bc0/while5.bc0
+tests/task4/old_bc0/ifge3.bc0
+tests/task4/old_bc0/ifge4.bc0
+tests/task4/old_bc0/ifge5.bc0
+tests/task4/old_bc0/ifge6.bc0
+tests/task4/old_bc0/ifle1.bc0
+tests/task4/old_bc0/ifle2.bc0
+tests/task4/old_bc0/ifne1.bc0
+tests/task4/old_bc0/ifle3.bc0
+tests/task4/old_bc0/ifne2.bc0
+tests/task4/old_bc0/ifle4.bc0
+tests/task4/old_bc0/ifle5.bc0
+tests/task4/old_bc0/ifne3.bc0
+tests/task4/old_bc0/ifle6.bc0
+tests/task4/old_bc0/ifeq1.bc0
+tests/task4/old_bc0/ifne4.bc0
+tests/task4/old_bc0/ifeq2.bc0
+tests/task4/old_bc0/for1.bc0
+tests/task4/old_bc0/ifeq3.bc0
+tests/task4/old_bc0/for2.bc0
+tests/task4/old_bc0/ifeq4.bc0
+tests/task4/old_bc0/for3.bc0
+tests/task4/old_bc0/for4.bc0
+tests/task4/old_bc0/for5.bc0
+tests/task4/c0/
+tests/task4/c0/iflt1.c0
+tests/task4/c0/ifgt6.c0
+tests/task4/c0/iflt3.c0
+tests/task4/c0/iflt5.c0
+tests/task4/c0/while1.c0
+tests/task4/c0/ifge1.c0
+tests/task4/c0/while3.c0
+tests/task4/c0/ifge3.c0
+tests/task4/c0/while5.c0
+tests/task4/c0/ifge5.c0
+tests/task4/c0/ifle2.c0
+tests/task4/c0/ifle4.c0
+tests/task4/c0/ifne2.c0
+tests/task4/c0/nested2.c0
+tests/task4/c0/ifne4.c0
+tests/task4/c0/ifle6.c0
+tests/task4/c0/ifeq1.c0
+tests/task4/c0/ifeq3.c0
+tests/task4/c0/for1.c0
+tests/task4/c0/for3.c0
+tests/task4/c0/ifgt1.c0
+tests/task4/c0/for5.c0
+tests/task4/c0/ifgt3.c0
+tests/task4/c0/ifgt5.c0
+tests/task4/c0/iflt2.c0
+tests/task4/c0/iflt4.c0
+tests/task4/c0/iflt6.c0
+tests/task4/c0/while2.c0
+tests/task4/c0/while4.c0
+tests/task4/c0/ifge2.c0
+tests/task4/c0/ifge4.c0
+tests/task4/c0/ifle1.c0
+tests/task4/c0/ifge6.c0
+tests/task4/c0/ifle3.c0
+tests/task4/c0/ifne1.c0
+tests/task4/c0/nested1.c0
+tests/task4/c0/ifle5.c0
+tests/task4/c0/ifne3.c0
+tests/task4/c0/nested3.c0
+tests/task4/c0/ifeq2.c0
+tests/task4/c0/for2.c0
+tests/task4/c0/ifeq4.c0
+tests/task4/c0/for4.c0
+tests/task4/c0/ifgt2.c0
+tests/task4/c0/ifgt4.c0
+tests/task4/sources.test
+tests/task4/nested1.bc0
+tests/task4/nested2.bc0
+tests/task4/nested3.bc0
+tests/task4/ifgt1.bc0
+tests/task4/ifgt2.bc0
+tests/task4/ifgt3.bc0
+tests/task4/ifgt4.bc0
+tests/task4/ifgt5.bc0
+tests/task4/iflt1.bc0
+tests/task4/ifgt6.bc0
+tests/task4/iflt2.bc0
+tests/task4/iflt3.bc0
+tests/task4/iflt4.bc0
+tests/task4/iflt5.bc0
+tests/task4/iflt6.bc0
+tests/task4/while1.bc0
+tests/task4/while2.bc0
+tests/task4/while3.bc0
+tests/task4/ifge1.bc0
+tests/task4/while4.bc0
+tests/task4/ifge2.bc0
+tests/task4/while5.bc0
+tests/task4/ifge3.bc0
+tests/task4/ifge4.bc0
+tests/task4/ifge5.bc0
+tests/task4/ifge6.bc0
+tests/task4/ifle1.bc0
+tests/task4/ifle2.bc0
+tests/task4/ifle3.bc0
+tests/task4/ifne1.bc0
+tests/task4/ifle4.bc0
+tests/task4/ifne2.bc0
+tests/task4/ifle5.bc0
+tests/task4/ifne3.bc0
+tests/task4/ifle6.bc0
+tests/task4/ifeq1.bc0
+tests/task4/ifne4.bc0
+tests/task4/ifeq2.bc0
+tests/task4/for1.bc0
+tests/task4/ifeq3.bc0
+tests/task4/for2.bc0
+tests/task4/ifeq4.bc0
+tests/task4/for3.bc0
+tests/task4/for4.bc0
+tests/task4/for5.bc0
+tests/task5/
+tests/task5/c0/
+tests/task5/c0/string1.c0
+tests/task5/c0/string2.c0
+tests/task5/c0/string3.c0
+tests/task5/c0/recursion1.c0
+tests/task5/c0/string4.c0
+tests/task5/c0/string5.c0
+tests/task5/c0/recursion2.c0
+tests/task5/c0/string6.c0
+tests/task5/c0/recursion3.c0
+tests/task5/c0/string7.c0
+tests/task5/c0/recursion4.c0
+tests/task5/c0/string8.c0
+tests/task5/c0/string9.c0
+tests/task5/c0/native1.c0
+tests/task5/c0/native2.c0
+tests/task5/c0/static1.c0
+tests/task5/c0/static2.c0
+tests/task5/c0/native3.c0
+tests/task5/c0/static3.c0
+tests/task5/c0/native4.c0
+tests/task5/c0/static4.c0
+tests/task5/c0/native1.bc0
+tests/task5/c0/native4.bc0
+tests/task5/c0/string8.bc0
+tests/task5/c0/recursion4.bc0
+tests/task5/old_bc0/
+tests/task5/old_bc0/string1.bc0
+tests/task5/old_bc0/string2.bc0
+tests/task5/old_bc0/string3.bc0
+tests/task5/old_bc0/recursion1.bc0
+tests/task5/old_bc0/string4.bc0
+tests/task5/old_bc0/string5.bc0
+tests/task5/old_bc0/recursion2.bc0
+tests/task5/old_bc0/string6.bc0
+tests/task5/old_bc0/recursion3.bc0
+tests/task5/old_bc0/string7.bc0
+tests/task5/old_bc0/recursion4.bc0
+tests/task5/old_bc0/string8.bc0
+tests/task5/old_bc0/string9.bc0
+tests/task5/old_bc0/native1.bc0
+tests/task5/old_bc0/native2.bc0
+tests/task5/old_bc0/static1.bc0
+tests/task5/old_bc0/static2.bc0
+tests/task5/old_bc0/native3.bc0
+tests/task5/old_bc0/static3.bc0
+tests/task5/old_bc0/native4.bc0
+tests/task5/old_bc0/static4.bc0
+tests/task5/string1.bc0
+tests/task5/string2.bc0
+tests/task5/string3.bc0
+tests/task5/string4.bc0
+tests/task5/recursion1.bc0
+tests/task5/string5.bc0
+tests/task5/recursion2.bc0
+tests/task5/string6.bc0
+tests/task5/recursion3.bc0
+tests/task5/string7.bc0
+tests/task5/recursion4.bc0
+tests/task5/string8.bc0
+tests/task5/sources.test
+tests/task5/string9.bc0
+tests/task5/native1.bc0
+tests/task5/static1.bc0
+tests/task5/native2.bc0
+tests/task5/static2.bc0
+tests/task5/native3.bc0
+tests/task5/static3.bc0
+tests/task5/native4.bc0
+tests/task5/static4.bc0
+tests/task6/
+tests/task6/old_bc0/
+tests/task6/old_bc0/alloc2.bc0
+tests/task6/old_bc0/alloc3.bc0
+tests/task6/old_bc0/alloc4.bc0
+tests/task6/old_bc0/alloc5.bc0
+tests/task6/old_bc0/chararray1.bc0
+tests/task6/old_bc0/chararray2.bc0
+tests/task6/old_bc0/array1.bc0
+tests/task6/old_bc0/chararray3.bc0
+tests/task6/old_bc0/array2.bc0
+tests/task6/old_bc0/chararray4.bc0
+tests/task6/old_bc0/array3.bc0
+tests/task6/old_bc0/array4.bc0
+tests/task6/old_bc0/array5.bc0
+tests/task6/old_bc0/array6.bc0
+tests/task6/old_bc0/struct1.bc0
+tests/task6/old_bc0/struct2.bc0
+tests/task6/old_bc0/struct3.bc0
+tests/task6/old_bc0/struct4.bc0
+tests/task6/old_bc0/alloc1.bc0
+tests/task6/c0/
+tests/task6/c0/alloc4.c0
+tests/task6/c0/alloc5.c0
+tests/task6/c0/alloc6.c0
+tests/task6/c0/chararray1.c0
+tests/task6/c0/chararray2.c0
+tests/task6/c0/array1.c0
+tests/task6/c0/chararray3.c0
+tests/task6/c0/array2.c0
+tests/task6/c0/chararray4.c0
+tests/task6/c0/array3.c0
+tests/task6/c0/array4.c0
+tests/task6/c0/array5.c0
+tests/task6/c0/array6.c0
+tests/task6/c0/struct1.c0
+tests/task6/c0/struct2.c0
+tests/task6/c0/struct3.c0
+tests/task6/c0/struct4.c0
+tests/task6/c0/alloc1.c0
+tests/task6/c0/alloc2.c0
+tests/task6/c0/alloc3.c0
+tests/task6/c0/alloc2.bc0
+tests/task6/c0/chararray3.bc0
+tests/task6/alloc2.bc0
+tests/task6/alloc3.bc0
+tests/task6/alloc4.bc0
+tests/task6/alloc5.bc0
+tests/task6/alloc6.bc0
+tests/task6/chararray1.bc0
+tests/task6/sources.test
+tests/task6/chararray2.bc0
+tests/task6/array1.bc0
+tests/task6/chararray3.bc0
+tests/task6/chararray4.bc0
+tests/task6/array2.bc0
+tests/task6/array3.bc0
+tests/task6/array4.bc0
+tests/task6/array5.bc0
+tests/task6/array6.bc0
+tests/task6/struct1.bc0
+tests/task6/struct2.bc0
+tests/task6/struct3.bc0
+tests/task6/struct4.bc0
+tests/task6/alloc1.bc0
+tests/expectedresults.txt
+tests/sources.test
+tests/lib/
+tests/lib/args.h0
+tests/lib/c0ffi.list
+tests/lib/cc0lib.c
+tests/lib/cc0main.c
+tests/lib/conio.h0
+tests/lib/curses.h0
+tests/lib/file.h0
+tests/lib/img.h0
+tests/lib/libargs.so
+tests/lib/libconio.so
+tests/lib/libcurses.so
+tests/lib/libfile.so
+tests/lib/libgc.a
+tests/lib/libimg.so
+tests/lib/libparse.so
+tests/lib/libstring.so
+tests/lib/parse.h0
+tests/lib/rand.c0
+tests/lib/rand.h0
+tests/lib/string.h0
+tests/runtime/
+tests/runtime/bare.h
+tests/runtime/c0rt.h
+tests/runtime/libbare.so
+tests/runtime/libc0rt.so
+tests/runtime/libunsafe.so
+tests/runtime/unsafe.h
+tests/xalloc.c
+tests/stacks.c
+tests/stacks.h
+tests/readfile.c
+tests/readfile.h
+tests/read_program.c
+tests/c0vm_c0ffi.c
+tests/c0vm_c0ffi.h
+tests/c0vm_main.c
+tests/args.h0
+tests/bare.h
+tests/bytecodes.h
+tests/c0.h
+tests/c0runtime.h
+tests/conio.h0
+tests/contracts.h
+tests/curses.h0
+tests/file.h0
+tests/img.h0
+tests/parse.h0
+tests/xalloc.h
+tests/string.h0
+tests/util.h
+tests/c0vm.h
+tests/runtest.py
+make compile -is
+Compiling VM instance
+make grade -s
+Starting Autograde...
+
+================================================================================
+BEGINNING AUTOGRADE...
+
+================================================================================
+GRADING TASK2
+
+--------------------------------------------------------------------------------
+Grading return1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading return1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading return1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading add1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading add2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading add3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading add4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading sub1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading sub2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading sub3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading sub4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mul7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div8.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div9.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div10.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div11.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading div12.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod8.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod9.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod10.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod11.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading mod12.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading and1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading and2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading and3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading and4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading and5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading or1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading or2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading or3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading or4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading or5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading xor1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading xor2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading xor3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading xor4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading xor5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl8.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl9.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl10.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl11.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl12.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl13.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shl14.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr8.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr9.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr10.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr11.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr12.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr13.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading shr14.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading dup.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading popswap.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading combo1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading combo2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+
+TOTAL SCORE: 25/25
+================================================================================
+GRADING TASK3
+
+--------------------------------------------------------------------------------
+Grading largeadd1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeadd2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeadd3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeadd4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largesub1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largesub2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largesub3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largesub4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemul1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemul2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largediv1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largediv2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largediv3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largediv4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemod1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemod2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemod3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largemod4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeand1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeand2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeor1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeor2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largexor1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largexor2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshl1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshl2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshl3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshr1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshr2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading largeshr3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const1.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect c0vm with large constants
+--------------------------------------------------------------------------------
+Grading const2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading const7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+
+TOTAL SCORE: 9/10
+================================================================================
+GRADING TASK4
+
+--------------------------------------------------------------------------------
+Grading ifeq1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifeq2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifeq3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifeq4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifne1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifne2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifne3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifne4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifge6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifle6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading ifgt6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading iflt6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading for1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading for2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading for3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading for4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading for5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading while1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading while2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading while3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading while4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading while5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading nested1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading nested2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+
+TOTAL SCORE: 25/25
+================================================================================
+GRADING TASK5
+
+--------------------------------------------------------------------------------
+Grading static1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading static2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading static3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading static4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading recursion1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading recursion2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading recursion3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading recursion4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading native1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading native2.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading native3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading native4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string1.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string2.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect string function calls
+--------------------------------------------------------------------------------
+Grading string3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string6.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string7.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading string8.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect string function calls
+--------------------------------------------------------------------------------
+Grading string9.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect string function calls
+--------------------------------------------------------------------------------
+
+TOTAL SCORE: 17/20
+================================================================================
+GRADING TASK6
+
+--------------------------------------------------------------------------------
+Grading alloc1.bc0:
+
+Expect successful result
+Test failed: Unknown error: 245
+             Incorrect allocation and memory access
+--------------------------------------------------------------------------------
+Grading alloc2.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect allocation and memory access
+--------------------------------------------------------------------------------
+Grading alloc3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading alloc4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading alloc5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading array1.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect array allocation and access
+--------------------------------------------------------------------------------
+Grading array2.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect array allocation and access
+--------------------------------------------------------------------------------
+Grading array3.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading array4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading array5.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading array6.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect array allocation and access
+--------------------------------------------------------------------------------
+Grading struct1.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect struct manipulation
+--------------------------------------------------------------------------------
+Grading struct2.bc0:
+
+Expect successful result
+Test failed: Unknown error: 250
+             Incorrect struct manipulation
+--------------------------------------------------------------------------------
+Grading struct3.bc0:
+
+Expect successful result
+Test failed: Unknown error: 245
+             Incorrect struct manipulation
+--------------------------------------------------------------------------------
+Grading struct4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+Grading chararray1.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect chararray manipulation
+--------------------------------------------------------------------------------
+Grading chararray2.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect chararray manipulation
+--------------------------------------------------------------------------------
+Grading chararray3.bc0:
+
+Expect successful result
+Test failed: Unknown error: 246
+             Incorrect chararray manipulation
+--------------------------------------------------------------------------------
+Grading chararray4.bc0:
+
+Expect successful result
+Test passed.
+--------------------------------------------------------------------------------
+
+TOTAL SCORE: 4/10
+================================================================================
+AUTOGRADE COMPLETE
+TOTAL SCORE: 80/90
+AUTORESULTS_STRING=25:9:25:17:4
+
+Score for this problem: 25.0
+
+Graded by: 
+Autolab 2.1.1 | Mobile | Contact | Need Help? | Logout
