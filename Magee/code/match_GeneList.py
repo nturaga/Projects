@@ -1,3 +1,7 @@
+# Author: Nitesh Turaga
+# Systems Programmer II, Lab - Adrian lee, Magee Womens Research Institute
+
+# Description:
 
 def eliminateSpace(text):
     if (text == None):
@@ -9,12 +13,11 @@ def eliminateSpace(text):
         edited+=text[i]
     return edited
 
-
 def mainFunction(textnm,texthg):
     newStr=""
     for i in xrange(len(textnm)):
         for j in xrange(len(texthg)-1):
-            #print texthg[j]
+
             if textnm[i] in texthg[j].split("\t"):
 #            #extract strat and end positions here
                 lineHG_array = texthg[j].split("\t")
@@ -29,8 +32,6 @@ def mainFunction(textnm,texthg):
                 newStr+="\n"
     return newStr
     
-
-
 def run():
     file_NM = open("NM_IDs.txt","r")
     text_NM = file_NM.read()
@@ -45,7 +46,6 @@ def run():
 
     #Array for the HG chromosomes
     texthg = text_HG.split("\n")
-#    print len(texthg)
     out_handle = open("TSS_TTS.txt","w")
     
     out_handle.write(mainFunction(textnm,texthg))

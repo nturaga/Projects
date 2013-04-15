@@ -1,3 +1,15 @@
+# Author: Nitesh Turaga
+# Systems Programmer II, Lab - Adrian lee, Magee Womens Research Institute
+
+# Description:
+#   To do for identification of Homopolymer:
+#   1. Navigate to the position in the variant file in the corresponding sequence.
+#   2. Once at that position, check if the substitution at that position
+#       gives rise to a homopolymer
+#   3. If YES == HOMOPOLYMER at that position
+#       then
+#       dictionary = (key = sequence , value = (site of change, substitution))
+
 import re
 import commands
 import math
@@ -57,21 +69,4 @@ def identify(variantsFile):
             
 identify("HCC1954_variants.txt")
 
-# To do for identification of Homopolymer:
-# 1. Navigate to the position in the variant file in the corresponding sequence.
-# 2. Once at that position, check if the substitution at that position 
-#    gives rise to a homopolymer 
-# 3. If YES == HOMOPOLYMER at that position
-#    then
-#    dictionary = (key = sequence , value = (site of change, substitution))
-
-# 4. If NO ==??
-
-
-
-
-
-
-#for infile in glob.glob(os.path.join(".","*_seq.txt")):
-        
                                 

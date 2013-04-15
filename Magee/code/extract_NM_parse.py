@@ -1,4 +1,7 @@
-# Author : Nitesh Turaga
+# Author: Nitesh Turaga
+# Systems Programmer II, Lab - Adrian lee, Magee Womens Research Institute
+
+# Description:
 
 from xml.dom.minidom import parseString
 #all these imports are standard on most modern python implementations

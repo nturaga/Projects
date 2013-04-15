@@ -1,3 +1,8 @@
+# Author: Nitesh Turaga
+# Systems Programmer II, Lab - Adrian lee, Magee Womens Research Institute
+
+# Description:
+
 import math
 
 def run():
@@ -27,13 +32,9 @@ def compare(ERE2, SRC_1):
     ER_text = ""
     
     for line_ERE2 in ERE2.splitlines():
-#        print "line_ERE2",line_ERE2
         ERE2_split = line_ERE2.split("\t")
-#        print "ERE2_split[0]",ERE2_split[0]
         for line_SRC in SRC_1.splitlines():
-#            print "line_SRC",line_SRC
             SRC_split = line_SRC.split("\t")
-#            print "SRC_split[0]",SRC_split[0]
             if (ERE2_split[0] == SRC_split[0]):
                 
                 if (( (float(SRC_split[1]) >= float(ERE2_split[1]))\
@@ -43,11 +44,9 @@ def compare(ERE2, SRC_1):
                         
                         ERE2_SRC_text += line_SRC
                         ERE2_SRC_text +="\n"
-#                        print "add1"
                 else:
                     ER_text+=line_SRC
                     ER_text+="\n"
-#                    print "add2"
     return (ERE2_SRC_text,ER_text)
                     
 
