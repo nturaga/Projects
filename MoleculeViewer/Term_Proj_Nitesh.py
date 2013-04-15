@@ -1,29 +1,18 @@
-# Nitesh Turaga
-
+# Author : Nitesh Turaga
+# Graduate Student: Carnegie mellon university
 # AMINO ACID EXPLORER/ MOLECULE VIEWER
+"""
+ AMINO ACID EXPLORER
+   Features-- Structures of amino acids 
+           
+           -- Best part--Everything in 3D with animations and rotatable
+               views.
+           -- GUI buttons used to navigate the Amino acids
+INSTRCTIONS#
+   Use the dropdown box to select the different amino acids
+"""
 
-# andrew id : nturaga
-
-
-# AMINO ACID EXPLORER
-#   Features-- Structures of amino acids 
-#           
-#           -- Best part--Everything in 3D with animations and rotatable
-#               views.
-#           -- GUI buttons used to navigate the Amino acids
-#INSTRCTIONS#
-#   Use the dropdown box to select the different amino acids
-
-import os
-
-    
-import tkMessageBox
-import tkSimpleDialog
-
-from visual import*
-
-from Tkinter import*
-
+"""
 # First stage is build amino acids in different
 
 # Build the amino acids using visual python first
@@ -39,6 +28,13 @@ from Tkinter import*
 
 
 # Getting a larger display for the amino acid structures
+"""
+
+import os
+import tkMessageBox
+import tkSimpleDialog
+from visual import*
+from Tkinter import*
 
 aminoDisplay = display(title='Amino Acid',
      x=0, y=0, width=800, height=800,
@@ -523,7 +519,6 @@ def mousePressed(event):
     yOffset=80
     boxHeight=30
     boxDiff=60
-    #print canvas.data.popupList1
     if (event.x>xLeft and event.x<xRight\
         and event.y>yOffset and event.y<(yOffset+boxHeight)):
       
@@ -721,11 +716,8 @@ def button1Pressed(event):
         try:
             if filename== "": print "enter wrong filename"
             filePath= getDesktopPath(canvas.data.filename)
-            #print "1"
             fileExists(filePath)
-            #print "2"
             makeMolecule(readTextFile(filePath))
-            #print "3"    
         except AttributeError:
             print "enter a filename"
     redrawAll()
@@ -764,7 +756,6 @@ def eliminateSpace(text):
 
 def extractValues(line):
     line=eliminateSpace(line)
-    #print "line:",line
     lineNew=line.split("\n")
     coordsList=[]
     hetAtmCoords=[]
@@ -784,7 +775,6 @@ def extractValues(line):
     return (coordsList,hetAtmCoords)
 
 def makeAtom(px,py,pz):
-    #print "makeAtom"
     colorList=[(1,0,0),(0,1,0),
                (1,0.5,0),(0,0,1),(0,1,1),(1,0,1)]
     index= random.randint(0,5)
@@ -792,23 +782,14 @@ def makeAtom(px,py,pz):
     rad=0.5
     atom = sphere( pos = vector( px,py,pz), radius= rad, color= atomColor
             ,opacity=1)
-##    atomName= text (text= atomName, align= 'center',
-##                   pos= vector( px,py,pz), depth=0.1,
-##                   color= (1,1,0), height= rad)
-
-
-##def connectAtoms(coordsList):
-##    for i in xrange(len(coordsList)):
         
 def makeHetAtom(px,py,pz):
-    #print "makeAtom"
     rad=0.5
     atom = sphere( pos = vector( px,py,pz), radius= rad, color= (0,0,0)
             ,opacity=1)
     
 def makeMolecule(line):
     coordsList,hetAtmCoords=extractValues(line)
-    #print "21",coordsList
     emptyList=[]
     for coords in coordsList:
         makeAtom(coords[0],coords[1],coords[2]) 
@@ -856,7 +837,7 @@ def redrawAll():
         electricAminoList(20,230,300,30)   
 #########################################################
 #Stuff in init()
-        ################
+################
 
 def aminoVisibility():
     canvas.data.vGly= False
