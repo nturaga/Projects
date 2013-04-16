@@ -1,5 +1,5 @@
 # Author: Nitesh Turaga
-
+# Graduate student at Carnegie Mellon University
 # Naive Bayes Classifier
 
 
@@ -12,6 +12,11 @@ import sys
 import copy
 import operator
 
+
+"""
+Training function: This function trains the classifier based on the 
+    training set given.
+"""
 def trainingFunction(fileNames):
 
     distinct_words_lib = []
@@ -84,7 +89,9 @@ def trainingFunction(fileNames):
     return (prior_con,prior_lib,distinct_words_con,distinct_words_lib,denominator_con,denominator_lib)
 
 
-
+"""
+    Classifier: this function builds my table of conditional independence based on the test data.
+"""
 def classifyBlog(pathName,dict_con,dict_lib,prior_con,prior_lib,denominator_con,denominator_lib):
     
     a = open(pathName)
@@ -117,6 +124,10 @@ def classifyBlog(pathName,dict_con,dict_lib,prior_con,prior_lib,denominator_con,
         label += "C"
     return (pathName,label)
 
+"""
+Run the total function based on the training and the test set.    
+"""
+
 def classifier(train,test):
     
     trainFile = "split/" + train
@@ -146,6 +157,11 @@ def classifier(train,test):
     z.close()
     return
 
+
+"""
+Usage: python nb_classifier.py splitX.train splitX.test
+    
+"""
 
 train = sys.argv[1]
 test = sys.argv[2]

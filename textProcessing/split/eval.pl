@@ -1,5 +1,8 @@
 #!/usr/local/bin/perl
 
+# File written by third party to evaluate the accuracy of the classifer.
+
+
 use English;
 use Carp;
 use Getopt::Long;
