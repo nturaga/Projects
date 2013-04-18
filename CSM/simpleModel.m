@@ -1,11 +1,6 @@
-function result = simpleModel(Time,X)
+%Author: Nitesh Turaga
 
-%X(1) = S(t)
-%X(2) = E(t)
-%X(3) = I1
-%X(4) = I2
-%X(5) = T
-%X(6) = P
+function result = simpleModel(Time,X)
 
 %parameters given in the paper
 sigma = 1/30; %1/days Tranfer of exposed to primary
