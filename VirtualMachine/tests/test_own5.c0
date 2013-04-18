@@ -1,9 +1,0 @@
-
-#use <string>
-#use <conio>
-
-int main()
-{
-  string str =  "world is new ";
-  return string_length(str);
-}
