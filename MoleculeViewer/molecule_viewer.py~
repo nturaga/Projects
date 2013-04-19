@@ -1,8 +1,6 @@
 # Author : Nitesh Turaga
 # Graduate Student: Carnegie mellon university
 # AMINO ACID EXPLORER/ MOLECULE VIEWER
-# NOTE: I will be constantly adding features and updating in the git repo,
-# please watch for updates.
 """
  AMINO ACID EXPLORER
    Features-- Structures of amino acids 
